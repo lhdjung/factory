@@ -42,9 +42,9 @@ test_that("force_print() errors when not provided a function", {
 })
 
 test_that("force_print() errors when provided a primitive", {
+  c %>% force_print() %>% expect_error()
+  `[` %>% force_print() %>% expect_error()
   length %>% force_print() %>% expect_error()
-  length %>% force_print() %>% expect_error()
-  length %>% force_print_all() %>% expect_error()
 })
 
 test_that("force_print_all() errors when not provided a function", {
@@ -53,8 +53,8 @@ test_that("force_print_all() errors when not provided a function", {
 })
 
 test_that("force_print_all() errors when provided a primitive", {
-  length %>% force_print_all() %>% expect_error()
-  length %>% force_print_all() %>% expect_error()
+  c %>% force_print_all() %>% expect_error()
+  `[` %>% force_print_all() %>% expect_error()
   length %>% force_print_all() %>% expect_error()
 })
 
